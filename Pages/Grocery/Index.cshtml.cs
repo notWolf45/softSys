@@ -29,12 +29,10 @@ namespace softSys_1.Pages.Grocery
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (aName == null)
+            if(Name != null)
             {
-                return NotFound();
+                RedirectToPage("./Order");
             }
-            Name = _context.users.Where(h => h.Name.ToLower() == aName.ToLower()).FirstOrDefault();
-            //return RedirectToPage("./Index");
             return Page();
         }
     }
